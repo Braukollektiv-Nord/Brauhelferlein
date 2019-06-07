@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="BKNBrauhelferKonverter.Views.SudKonverterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BKNBrauhelferKonverter.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Style.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.ColumnSpan="2"
+               Content="Brauhelfer-Sude:" />
+
+        <Button Grid.Row="0" 
+                Grid.Column="2" 
+                HorizontalAlignment="Right"
+                Content="Einstellungen" />
+
+        <ListView Grid.Row="1"
+                  Grid.Column="0"
+                  Height="300"
+                  ItemsSource="{Binding Items}"
+                  SelectedItem="{Binding SelectedItem}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="250" DisplayMemberBinding="{Binding Sudname}" />
+                    <GridViewColumn Header="Braudatum" Width="90" DisplayMemberBinding="{Binding Braudatum, StringFormat='dd.MM.yyyy'}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Row="1"
+                    Grid.Column="1"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Center">
+            <Button Content="Konvertieren"
+                    Width="90"
+                    Command="{Binding KonvertierenCommand}"/>
+            <Button Content="Git Commit"
+                    Width="90"
+                    Command="{Binding GitCommitCommand}"/>
+        </StackPanel>
+
+
+    </Grid>
+</UserControl>

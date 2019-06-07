@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Elements/Button.xaml" />
+        <ResourceDictionary Source="Elements/GroupBox.xaml" />
+        <ResourceDictionary Source="Elements/Label.xaml" />
+        <ResourceDictionary Source="Elements/ListView.xaml" />
+        <ResourceDictionary Source="Elements/PasswordBox.xaml" />
+        <ResourceDictionary Source="Elements/TextBox.xaml" />
+
+    </ResourceDictionary.MergedDictionaries>
+    
+</ResourceDictionary>
